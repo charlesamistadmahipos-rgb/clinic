@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Bookings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+    <div>
+        <h1>Clinic Bookings</h1>
+        <p id="today"></p>
+    </div>
+    <svg class="ecg" viewBox="0 0 260 60" aria-hidden="true">
+        <path pathLength="1" d="M0 36H62L72 36L80 26L88 36H108L116 8L128 54L138 24L146 36H190L198 30L206 36H260"/>
+    </svg>
+</header>
+
+<main class="layout">
+
+    <section class="panel" aria-labelledby="formTitle">
+        <h2 id="formTitle">New appointment</h2>
+
+        <form id="bookingForm">
+            <label for="name">Patient name</label>
+            <input type="text" id="name" autocomplete="off" required>
+
+            <div class="pair">
+                <div>
+                    <label for="id">Patient ID</label>
+                    <input type="text" id="id" autocomplete="off" required>
+                </div>
+                <div>
+                    <label for="age">Age</label>
+                    <input type="number" id="age" min="0" max="120" required>
+                </div>
+            </div>
+
+            <div class="pair">
+                <div>
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div>
+                    <label for="time">Time</label>
+                    <input type="time" id="time" required>
+                </div>
+            </div>
+
+            <label for="reason">Reason for visit</label>
+            <input type="text" id="reason" autocomplete="off" required>
+
+            <button type="submit">Book appointment</button>
+            <p id="message" role="status" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <section class="agenda" aria-labelledby="agendaTitle">
+        <div class="agenda-head">
+            <h2 id="agendaTitle">Schedule</h2>
+            <span id="count"></span>
+        </div>
+        <div id="appointmentList"></div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
